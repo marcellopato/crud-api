@@ -1,0 +1,1499 @@
+{
+	"info": {
+		"_postman_id": "d1a01e29-b3a0-4e5b-acc5-cbdb845fb419",
+		"name": "CRUD-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "245589"
+	},
+	"item": [
+		{
+			"name": "Log/Register",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Marcello",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "marcellocorreia@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|VSKFfAsD6OJOyFQ2yfEdlOAjuGc88dMckt4hNuSW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "marcellocorreia@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|hgXj58lZY54UnIfGLTWWChypKgRllc7X5W3lSQRM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/logout",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cidade",
+			"item": [
+				{
+					"name": "Add Cidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Metropolis",
+									"type": "text"
+								},
+								{
+									"key": "grupo_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/cidades",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all cidades",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/cidades",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch single Cidade",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/cidades/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ferraz de Vasconcelos",
+									"type": "text"
+								},
+								{
+									"key": "grupo_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/cidades/15?name=Ferraz de Vasconcelos&grupo_id=3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cidades",
+								"15"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Ferraz de Vasconcelos"
+								},
+								{
+									"key": "grupo_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/cidades/16",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cidades",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Campanha",
+			"item": [
+				{
+					"name": "Add campanha",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pirulito",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Campanha Pirulito que bate-bate",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/campanhas",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"campanhas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all campanhas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/campanhas",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"campanhas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch single campanha",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/campanhas/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"campanhas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update campanha",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program EDITED",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description EDITED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/campanhas/1?name=Pirulito Que Bate-Bate&desc=Pirulito que é de vidro",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"campanhas",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Pirulito Que Bate-Bate"
+								},
+								{
+									"key": "desc",
+									"value": "Pirulito que é de vidro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete campanha",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/campanhas/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"campanhas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Grupo",
+			"item": [
+				{
+					"name": "Add grupo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "C",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Campanha Bolo",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/grupos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all grupos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/grupos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"grupos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch single grupo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/grupos/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"grupos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update grupo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bolo",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "This is a short grupo EDITED",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/grupos/1?name=Pode apagar",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"grupos",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Pode apagar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete grupo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/grupos/5",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"grupos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Desconto",
+			"item": [
+				{
+					"name": "Add desconto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "LIXO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/descontos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"descontos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all descontos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/descontos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"descontos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch single desconto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/descontos/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"descontos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update desconto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bolo",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "This is a short grupo EDITED",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/descontos/3?name=20&desc=Vintão",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"descontos",
+								"3"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "20"
+								},
+								{
+									"key": "desc",
+									"value": "Vintão"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete desconto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/descontos/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"descontos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Add produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Pode apagar",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Pronto para sashimi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/produtos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all produtos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/produtos",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch single produto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/produtos/6",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Bolo",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "This is a short grupo EDITED",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/produtos/10?name=Peixe em fatias finas&desc=Sashimi",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos",
+								"10"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Peixe em fatias finas"
+								},
+								{
+									"key": "desc",
+									"value": "Sashimi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|qbRNkByrOQCPB24KtI4bKWgXRBtm6Oog4ioFuvPZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Name of the program",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "This is a short description",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/produtos/11",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{$accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
