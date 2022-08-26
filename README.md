@@ -1,4 +1,4 @@
-## xogito api crud test
+## api crud test
 
 This repo was coded using Laravel 8
 
