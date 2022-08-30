@@ -13,6 +13,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function(Request $request) {
         return auth()->user();
     });
+    // Route::resource('dashboard', App\Http\Controllers\API\DashboardController::class);
     Route::resource('cidades', App\Http\Controllers\API\CidadeController::class);
     Route::resource('campanhas', App\Http\Controllers\API\CampanhaController::class);
     Route::resource('grupos', App\Http\Controllers\API\GrupoController::class);

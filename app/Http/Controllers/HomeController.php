@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Campanha;
+use App\Models\Cidade;
+use App\Models\Desconto;
+use App\Models\Grupo;
+use App\Models\Produto;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $campanha = Campanha::all();
+        $desconto = Desconto::all();
+        $grupo = Grupo::with('cidade')->get();
+        $produto = Produto::all();
+
+            return view('home', compact('campanha', 'desconto', 'grupo', 'produto'));
     }
 }
