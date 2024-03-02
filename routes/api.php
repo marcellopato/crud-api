@@ -5,11 +5,13 @@ use Illuminate\Support\Facades\Route;
 
 //API route for register new user
 Route::post('/register', [App\Http\Controllers\API\AuthController::class, 'register']);
+// ->middleware('consulta-cep');
 //API route for login user
 Route::post('/login', [App\Http\Controllers\API\AuthController::class, 'login']);
 
 //Protecting Routes
-Route::group(['middleware' => ['auth:sanctum']], function () {
+Route::middleware(['auth:sanctum'])->group(function () {
+
     Route::get('/profile', function(Request $request) {
         return auth()->user();
     });
